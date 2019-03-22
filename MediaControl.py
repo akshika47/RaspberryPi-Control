@@ -24,11 +24,11 @@ def on_message(client, userdata, msg):
     
     ## used to play a clip(audio or video) using omxplayer. The MQTT broker sents 'playvideo1' as the message
     if(command == "playvideo1"):
-        os.system('omxplayer -o hdmi 1.wav')
+        os.system('omxplayer -o hdmi video1.wav')
 
     ## used to display an image. The MQTT broker sents 'displayimage1' as the message
     if(command == "displayimage1"):
-        os.system('sudo fbi -T 2 1.png')
+        os.system('sudo fbi -T 2 image1.png')
 
 client = mqtt.Client()
 client.username_pw_set(USERNAME, PASSWORD)
